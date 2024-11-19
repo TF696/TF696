@@ -66,28 +66,6 @@ body {
     background: #111; /* เพิ่มสีพื้นหลังให้แตกต่าง */
   }
   
-  .history-image img {
-    width: 512px; /* กำหนดความกว้างของภาพเป็น 512px */
-    height: 512px; /* กำหนดความสูงของภาพเป็น 512px */
-    object-fit: cover; /* ปรับให้ภาพไม่เบียดหรือยืดออกจากสัดส่วน */
-    border-radius: 8px; /* มุมของภาพกลมขึ้นเล็กน้อย */
-  }
-  
-  .history-image {
-    width: 30%;
-    text-align: center;
-  }
-  
-  .history-image img {
-    width: 100%; /* รูปภาพขนาดเต็มความกว้างของ container */
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .history-image p {
-    font-size: 1.2rem;
-  }
-  
   .squadrons .squadron-categories {
     display: flex;
     justify-content: space-around;
@@ -131,7 +109,7 @@ body {
     padding: 20px;
     background: #111;
   }
-  /* Slideshow styles */
+  /* Slideshow Styles */
 .slideshow-container {
     position: relative;
     max-width: 800px;
@@ -154,7 +132,6 @@ body {
     animation: fadeEffect 1.5s;
   }
   
-  /* เอฟเฟกต์จางเข้า-ออก */
   @keyframes fadeEffect {
     from {
       opacity: 0.4;
@@ -162,4 +139,32 @@ body {
     to {
       opacity: 1;
     }
+  }
+  
+  .slideshow-container .prev,
+  .slideshow-container .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .slideshow-container .prev:hover,
+  .slideshow-container .next:hover {
+    background-color: #ff4500;
+  }
+  
+  .slideshow-container .prev {
+    left: 10px;
+  }
+  
+  .slideshow-container .next {
+    right: 10px;
   }
