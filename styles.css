@@ -1,0 +1,165 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #000;
+  }
+  
+  .hero {
+    height: 100vh; /* ความสูงเต็มหน้าจอ */
+    background: url('img/main696.jpg') no-repeat center center/cover; /* ใส่ path ของภาพที่คุณดาวน์โหลดมา */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    display: flex; /* ใช้ flexbox เพื่อจัดตำแหน่งภายใน */
+    flex-direction: column; /* วางตำแหน่งในแนวตั้ง */
+    justify-content: center; /* จัดตำแหน่งเนื้อหาทั้งหมดให้อยู่ตรงกลางในแนวตั้ง */
+    align-items: center; /* จัดเนื้อหาให้อยู่ตรงกลางในแนวนอน */
+  }
+  
+  .navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .logo img {
+    height: 50px; /* ปรับขนาดโลโก้ */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .hero-content h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    background: #ff4500;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .about, .history, .squadrons, .contact {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .history, .squadrons {
+    background: #111; /* เพิ่มสีพื้นหลังให้แตกต่าง */
+  }
+  
+  .history-image img {
+    width: 512px; /* กำหนดความกว้างของภาพเป็น 512px */
+    height: 512px; /* กำหนดความสูงของภาพเป็น 512px */
+    object-fit: cover; /* ปรับให้ภาพไม่เบียดหรือยืดออกจากสัดส่วน */
+    border-radius: 8px; /* มุมของภาพกลมขึ้นเล็กน้อย */
+  }
+  
+  .history-image {
+    width: 30%;
+    text-align: center;
+  }
+  
+  .history-image img {
+    width: 100%; /* รูปภาพขนาดเต็มความกว้างของ container */
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .history-image p {
+    font-size: 1.2rem;
+  }
+  
+  .squadrons .squadron-categories {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+  
+  .squadrons .squadron-category {
+    width: 30%;
+    background: #222;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .squadrons .squadron-category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .squadrons .squadron-category p {
+    font-size: 1.1rem;
+  }
+  
+  .contact .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .contact .social-icons a img {
+    width: 50px; /* ปรับขนาดไอคอน */
+    height: 50px;
+    transition: transform 0.3s;
+  }
+  
+  .contact .social-icons a img:hover {
+    transform: scale(1.1);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+  }
+  /* Slideshow styles */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .slide {
+    display: none;
+    text-align: center;
+  }
+  
+  .slide img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .fade {
+    animation: fadeEffect 1.5s;
+  }
+  
+  /* เอฟเฟกต์จางเข้า-ออก */
+  @keyframes fadeEffect {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
