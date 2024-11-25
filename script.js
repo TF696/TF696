@@ -129,6 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevSongBtn = document.getElementById("prev-song");
   const nextSongBtn = document.getElementById("next-song");
   const currentSongLabel = document.getElementById("current-song");
+  const volumeSlider = document.getElementById("volume-slider");
+  const musicToggle = document.getElementById("music-toggle");
+  const musicContainer = document.querySelector(".music-container");
 
   let currentIndex = 0;
 
@@ -142,10 +145,10 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleMusicBtn.addEventListener("click", () => {
     if (music.paused) {
       music.play();
-      toggleMusicBtn.textContent = "⏸"; // Pause icon
+      toggleMusicBtn.textContent = "⏸";
     } else {
       music.pause();
-      toggleMusicBtn.textContent = "⏯"; // Play icon
+      toggleMusicBtn.textContent = "⏯";
     }
   });
 
@@ -155,12 +158,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectedOption = musicSelector.options[currentIndex];
     music.src = selectedOption.value;
     music.play();
-    toggleMusicBtn.textContent = "⏸"; // Update to Pause icon
+    toggleMusicBtn.textContent = "⏸";
     updateCurrentSongLabel();
   };
 
   // Handle Select Change
-  musicSelector.addEventListener("change", (e) => {
+  musicSelector.addEventListener("change", () => {
     currentIndex = musicSelector.selectedIndex;
     changeTrack(currentIndex);
   });
@@ -177,8 +180,19 @@ document.addEventListener("DOMContentLoaded", () => {
     changeTrack(currentIndex);
   });
 
+  // Volume Control
+  volumeSlider.addEventListener("input", (e) => {
+    music.volume = e.target.value;
+  });
+
+  // Toggle Music Player Visibility
+  musicToggle.addEventListener("click", () => {
+    musicContainer.classList.toggle("hidden");
+  });
+
   // Initialize
   updateCurrentSongLabel();
 });
+
 
 

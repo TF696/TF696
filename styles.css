@@ -309,19 +309,51 @@ section.visible {
 }
 
 /* Music Player Container */
+/* Music Player Container */
 #music-player {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  width: 300px;
-  background: #121212;
-  color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
   z-index: 1000;
+}
+
+/* Toggle Button */
+#music-toggle {
+  width: 50px;
+  height: 50px;
+  background: #ff4500;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#music-toggle:hover {
+  transform: scale(1.1);
+  background-color: #ffcc00;
+}
+
+/* Music Player Hidden */
+.hidden {
+  display: none;
+}
+
+/* Music Player UI */
+.music-container {
+  background: #121212;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  width: 300px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 /* Music Header */
@@ -329,16 +361,12 @@ section.visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background: #ff4500;
-  color: #fff;
-  font-size: 0.9rem;
 }
 
 .music-header #toggle-music {
   background: transparent;
   border: none;
-  color: #fff;
+  color: white;
   font-size: 1.2rem;
   cursor: pointer;
 }
@@ -352,18 +380,17 @@ section.visible {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 10px;
 }
 
 .music-controls button {
   background: #222;
   border: none;
-  color: #fff;
+  color: white;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .music-controls button:hover {
@@ -373,7 +400,7 @@ section.visible {
 .music-controls select {
   flex: 1;
   background: #333;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 5px;
   padding: 5px;
@@ -381,21 +408,31 @@ section.visible {
   font-size: 0.9rem;
 }
 
-
-
-button {
-  border: none;
-  background-color: white;
-  color: #ff4500;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
+/* Volume Controls */
+.volume-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
 }
 
-button:hover {
-  background-color: #ffcc00;
+#volume-slider {
+  flex: 1;
+  appearance: none;
+  width: 100%;
+  background: #ff4500;
+  height: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 /* Thumbnails */

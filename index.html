@@ -127,8 +127,13 @@
   </div>
 </div>
 
-  <!-- music player -->
-  <div id="music-player">
+
+ <div id="music-player">
+  <!-- ปุ่มซ่อน/แสดง Music Player -->
+  <div id="music-toggle" class="toggle-button">🎵</div>
+
+  <!-- กล่อง Music Player -->
+  <div class="music-container hidden">
     <div class="music-header">
       <span id="current-song">Now Playing: Song 1</span>
       <button id="toggle-music" title="Play/Pause">⏯</button>
@@ -138,14 +143,20 @@
       <select id="music-selector" aria-label="Select a song">
         <option value="audio/thxsomch-hate-slowed-reverb.mp3" data-title="ThxSoMch-Hate">ThxSoMch-Hate</option>
         <option value="audio/psycho-dreams.mp3" data-title="Psycho Dreams (Kill Eva)">Psycho Dreams (Kill Eva)</option>
-        <option value="audio/music3.mp3" data-title="Song 3">Song 3</option>
+        <option value="audio/Meet you at the Graveyard.mp3" data-title="Meet you at the Graveyard">Meet you at the Graveyard</option>
       </select>
       <button id="next-song" title="Next Song">⏭</button>
     </div>
+    <div class="volume-controls">
+      <label for="volume-slider">Volume:</label>
+      <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+    </div>
   </div>
-  <audio id="background-music" loop>
-    <source src="audio/thxsomch-hate-slowed-reverb.mp3" type="audio/mpeg">
-  </audio>
+</div>
+<audio id="background-music" loop>
+  <source src="audio/thxsomch-hate-slowed-reverb.mp3" type="audio/mpeg">
+</audio>
+
   
 
   <!-- Contact Section -->
